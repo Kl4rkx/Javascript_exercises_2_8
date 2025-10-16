@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Exercise3</title>
+</head>
+<style>
+    form {
+        background: lightpink;
+        color: blue;
+        border: 6px blue double;
+        width: 300;
+        text-align: center;
+    }
+</style>
+<form>
+    <input type="text" id="password1"><br>
+    <input type="text" id="password2"><br>
+    <input type="button" value="CheckEqual" onclick=CheckEqual()>
+    <br>
+</form>
+<script>
+    function CheckEqual() {
+        let a = document.getElementById("password1");
+        let b = document.getElementById("password2");
+        if (a.isEqualNode(b)) {
+            alert("The passwords are equal.");
+        } else {
+            alert("The passwords are not equal.");
+        };
+    }
+</script>
+
+<body>
+</body>
+
+</html>

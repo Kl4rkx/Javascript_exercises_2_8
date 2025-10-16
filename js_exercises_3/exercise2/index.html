@@ -1,52 +1,100 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Exercise2</title>
-</head>
-<style>
-    form {
-        background: lightpink;
-        color: blue;
-        border: 6px blue double;
-        width: 300;
-        text-align: center;
-    }
-</style>
-<form>
-    <input type="text" id="number1"><br>
-    <input type="button" value="Half1" onclick=CalculateHalf1()>
-    <input type="button" value="Double1" onclick=CalculateDouble1()>
-    <input type="button" value="Square1" onclick=CalculateSquare1()>
-    <input type="button" value="Root1" onclick=CalculateRoot1()>
-    <br>
-</form>
-<script>
-    function CalculateHalf1() {
-        a = document.getElementById('number1').value;
-        a = parseFloat(a);
-        a = a / 2;
-        alert(a);
-    }
-    function CalculateDouble1() {
-        a = document.getElementById('number1').value;
-        a = parseFloat(a);
-        a = a * 2;
-        alert(a);
-    }
-    function CalculateSquare1() {
-        a = document.getElementById('number1').value;
-        a = parseFloat(a);
-        a = a * a;
-        alert(a);
-    }
-    function CalculateRoot1() {
-        a = document.getElementById('number1').value;
-        a = parseFloat(a);
-        a = sqrt(a);
-        alert(a);
-    }
-</script>
+    <style>
+        body {
+            background: #ffe6f0;
+            font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+        }
 
-<body></body>
+        form {
+            background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
+            color: #003399;
+            border: 4px double #7e57c2;
+            border-radius: 18px;
+            width: 320px;
+            margin: 60px auto;
+            padding: 32px 24px 20px 24px;
+            text-align: center;
+            box-shadow: 0 6px 24px rgba(100, 0, 100, 0.12);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            border: none;
+            border-radius: 7px;
+            padding: 8px 12px;
+            margin-bottom: 18px;
+            font-size: 1.1em;
+            box-shadow: 0 2px 8px rgba(120, 90, 140, 0.06);
+            background: #fff8fd;
+            transition: box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #7e57c2;
+        }
+
+        input[type="button"] {
+            display: inline-block;
+            margin: 0 4px 13px 4px;
+            padding: 8px 18px;
+            background: linear-gradient(90deg, #7e57c2 60%, #5e94db 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 7px rgba(80, 40, 100, 0.07);
+            transition: background 0.2s, transform 0.12s;
+        }
+
+        input[type="button"]:hover {
+            background: linear-gradient(90deg, #5e94db 40%, #7e57c2 100%);
+            transform: translateY(-2px) scale(1.06);
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="number1" placeholder="Ingresa un número"><br>
+        <input type="button" value="Half1" onclick="CalculateHalf1()">
+        <input type="button" value="Double1" onclick="CalculateDouble1()">
+        <input type="button" value="Square1" onclick="CalculateSquare1()">
+        <input type="button" value="Root1" onclick="CalculateRoot1()">
+        <br>
+    </form>
+    <script>
+        function CalculateHalf1() {
+            let a = document.getElementById('number1').value;
+            a = parseFloat(a);
+            a = a / 2;
+            alert(a);
+        }
+        function CalculateDouble1() {
+            let a = document.getElementById('number1').value;
+            a = parseFloat(a);
+            a = a * 2;
+            alert(a);
+        }
+        function CalculateSquare1() {
+            let a = document.getElementById('number1').value;
+            a = parseFloat(a);
+            a = a * a;
+            alert(a);
+        }
+        function CalculateRoot1() {
+            let a = document.getElementById('number1').value;
+            a = parseFloat(a);
+            a = Math.sqrt(a);
+            alert(a);
+        }
+    </script>
+</body>
 
 </html>
