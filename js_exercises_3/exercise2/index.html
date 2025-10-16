@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Exercise2</title>
+</head>
+<style>
+    form {
+        background: lightpink;
+        color: blue;
+        border: 6px blue double;
+        width: 300;
+        text-align: center;
+    }
+</style>
+<form>
+    <input type="text" id="number1"><br>
+    <input type="button" value="Half1" onclick=CalculateHalf1()>
+    <input type="button" value="Double1" onclick=CalculateDouble1()>
+    <input type="button" value="Square1" onclick=CalculateSquare1()>
+    <input type="button" value="Root1" onclick=CalculateRoot1()>
+    <br>
+</form>
+<script>
+    function CalculateHalf1() {
+        a = document.getElementById('number1').value;
+        a = parseFloat(a);
+        a = a / 2;
+        alert(a);
+    }
+    function CalculateDouble1() {
+        a = document.getElementById('number1').value;
+        a = parseFloat(a);
+        a = a * 2;
+        alert(a);
+    }
+    function CalculateSquare1() {
+        a = document.getElementById('number1').value;
+        a = parseFloat(a);
+        a = a * a;
+        alert(a);
+    }
+    function CalculateRoot1() {
+        a = document.getElementById('number1').value;
+        a = parseFloat(a);
+        a = sqrt(a);
+        alert(a);
+    }
+</script>
+
+<body></body>
+
+</html>

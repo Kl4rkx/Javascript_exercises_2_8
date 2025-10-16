@@ -1,43 +1,86 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Exercise1</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #fbeee6 0%, #f8b3d8 100%);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: #fff7fa;
+            color: #363682;
+            border: 4px solid #ff66b2;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(255,102,178,0.15);
+            width: 340px;
+            padding: 28px 24px 32px 24px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.4em;
+            letter-spacing: 1px;
+            color: #d63384;
+        }
+        input[type=button] {
+            background: linear-gradient(90deg, #ff66b2 50%, #b26cff 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 26px;
+            margin: 0 8px 10px 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 1px 8px 0 rgba(179,108,255,0.13);
+            transition: background 0.17s, transform 0.13s;
+        }
+        input[type=button]:hover {
+            background: linear-gradient(90deg, #b26cff 50%, #ff66b2 100%);
+            transform: scale(1.08);
+            color: #fff7fa;
+        }
+        #myimage {
+            margin-top: 14px;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px 0 rgba(255,102,178,0.11);
+        }
+    </style>
 </head>
-<style>
-    form {
-        background: lightpink;
-        color: blue;
-        border: 6px blue double;
-        width: 300;
-        text-align: center;
-    }
-</style>
-<form>
-    <h2> Choose your prize:</h2>
-
-    <input type=button value="1st prize" onclick=prize1()>
-    <input type=button value="2nd prize" onclick=prize2()>
-    <input type=button value="3rd prize" onclick=prize3()><br>
-    <br>
-    <img id=myimage
-        src=https://static.vecteezy.com/system/resources/thumbnails/035/566/895/small_2x/red-gift-box-and-gold-ribbon-chinese-new-year-elements-icon-3d-rendering-png.png
-        width=200 height=200>
-</form>
-<script>
-    function prize1() {
-        alert("A new car.");
-        document.getElementById
-            ("myimage").src = "https://image.made-in-china.com/202f0j00amTcMCsEHPkz/New-Energy-Vehicle-2024-Exeed-Star-Era-Et-625km-Rwd-PRO-New-Electric-Car.webp";
-        document.bgColor = "turquoise";
-    }
-    function prize2() {
-        // PENDING TO COMPLETE
-    }
-    function prize3() {
-        // PENDING TO COMPLETE
-    }
-</script>
-
-<body></body>
-
+<body>
+    <form>
+        <h2>Choose your prize:</h2>
+        <input type="button" value="1st prize" onclick="prize1()">
+        <input type="button" value="2nd prize" onclick="prize2()">
+        <input type="button" value="3rd prize" onclick="prize3()"><br>
+        <img id="myimage"
+            src="https://static.vecteezy.com/system/resources/thumbnails/035/566/895/small_2x/red-gift-box-and-gold-ribbon-chinese-new-year-elements-icon-3d-rendering-png.png"
+            width="200" height="200" alt="Prize image">
+    </form>
+    <script>
+        function prize1() {
+            alert("A new car.");
+            document.getElementById("myimage").src = "https://img.freepik.com/premium-vector/front-view-orange-off-road-truck-suv-pickup-jeep-car-flat-vector-illustration_648968-46.jpg?semt=ais_hybrid&w=740&q=80";
+            document.body.style.background = "linear-gradient(120deg, #a2ffea 0%, #7fdfff 100%)";
+        }
+        function prize2() {
+            alert("A new phone.");
+            document.getElementById("myimage").src = "https://media.istockphoto.com/id/1624016429/vector/smartphone-phone-frameless-with-a-blank-screen-lying-on-a-flat-surface-high-resolution.jpg?s=612x612&w=0&k=20&c=jngzitLxAkYCpcTNMZVNInB9J21a_1Oi_N2obp2HkJk=";
+            document.body.style.background = "linear-gradient(120deg, #f6f7d7 0%, #ffe89a 100%)";
+        }
+        function prize3() {
+            alert("A new house.");
+            document.getElementById("myimage").src = "https://media.istockphoto.com/id/2187231512/vector/3d-minimalist-building-of-a-house-cottage-icon-for-concepts-of-business-investment-and-life.jpg?s=612x612&w=0&k=20&c=0FRSa0xhpvCvUJoYXUwvvg-yOBXLqDwypwWSem-r2Yk=";
+            document.body.style.background = "linear-gradient(120deg, #b7ffc1 0%, #68fea8 100%)";
+        }
+    </script>
+</body>
 </html>
