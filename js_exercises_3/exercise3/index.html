@@ -1,36 +1,89 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Exercise3</title>
+    <style>
+        body {
+            background: #e6ffec;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: #fff0f6;
+            color: #3066be;
+            border: 3px double #3066be;
+            width: 320px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(48,102,190,0.07);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        label {
+            font-size: 1rem;
+            margin-bottom: .3rem;
+        }
+        input[type="text"] {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: .6rem;
+            width: 90%;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3066be;
+            background: #fff8fc;
+        }
+        input[type="button"] {
+            background: linear-gradient(90deg, #b6ffc3, #9bbdf9);
+            color: #22559c;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.7rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(48,102,190,0.06);
+            transition: background 0.18s, color 0.18s;
+        }
+        input[type="button"]:hover {
+            background: linear-gradient(90deg, #fdc4e0, #79a8ee);
+            color: #fff;
+        }
+    </style>
 </head>
-<style>
-    form {
-        background: lightpink;
-        color: blue;
-        border: 6px blue double;
-        width: 300;
-        text-align: center;
-    }
-</style>
-<form>
-    <input type="text" id="password1"><br>
-    <input type="text" id="password2"><br>
-    <input type="button" value="CheckEqual" onclick=CheckEqual()>
-    <br>
-</form>
-<script>
-    function CheckEqual() {
-        let a = document.getElementById("password1");
-        let b = document.getElementById("password2");
-        if (a.isEqualNode(b)) {
-            alert("The passwords are equal.");
-        } else {
-            alert("The passwords are not equal.");
-        };
-    }
-</script>
-
 <body>
+    <form>
+        <div style="width: 100%; text-align: left;">
+            <label for="password1">Enter password:</label><br>
+            <input type="text" id="password1" placeholder="Enter password"><br>
+            <label for="password2">Enter password for the second time:</label><br>
+            <input type="text" id="password2" placeholder="Enter password again"><br>
+        </div>
+        <input type="button" value="Check Equal" onclick="CheckEqual()">
+    </form>
+    <script>
+        function CheckEqual() {
+            let a = document.getElementById("password1").value;
+            let b = document.getElementById("password2").value;
+            if (a === "" || b === "") {
+                alert("Please fill both password fields.");
+            }
+            else if (a === b) {
+                alert("The passwords are equal.");
+            } else {
+                alert("The passwords are not equal.");
+            }
+        }
+    </script>
 </body>
-
 </html>
