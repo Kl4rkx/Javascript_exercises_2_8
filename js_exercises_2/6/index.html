@@ -4,21 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David JS Exercise 2-6 or exam type exercise</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #fbf8cc 0%, #c1ffd7 100%);
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #40a578;
+            letter-spacing: 0.1em;
+            margin-top: 40px;
+            font-size: 2.2em;
+            text-shadow: 0 2px 8px #bdbdbdaa;
+        }
+        #results {
+            background: #fffef0;
+            max-width: 360px;
+            margin: 38px auto;
+            border-radius: 18px;
+            box-shadow: 0 6px 28px -8px #77d1b3cc, 0 1.2px 10px 2px #f7cc23a2;
+            padding: 30px 34px;
+            font-size: 1.13em;
+            color: #326054;
+        }
+        #results i {
+            color: #c0890f;
+            font-style: normal;
+            font-weight: 500;
+        }
+        #results br {
+            margin-bottom: 10px;
+        }
+        #results::before {
+            content: "📝 Summary";
+            display: block;
+            font-size: 1.06em;
+            color: #40a578;
+            font-weight: bold;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+        }
+    </style>
 </head>
 <body>
-    <!-- EXAM TYPE EXERCISE: Create a program which recreates a
-    bank: meanwhile positive (cash deposit, money is introduced to the
-    bank account) and negative (cash withdrawal, money is obtained
-    from the bank account ) money amounts (numbers) are introduced
-    by the user the bank needs to update the bank account balance (its
-    initial value will need to be introduced by the user in the beginning).
-    The user will need to indicate that no longer money amounts are
-    going to be typed in order to see the final balance.
-    Information to be shown in the screen:
-    Initial balance: 100 euro
-    Cash deposit: 20 euro
-    Cash withdrawal: - 10 euro
-    Balance due: 110 euro -->
     <h2>BANK</h2>
     <div id="results"></div>
     <script>
@@ -30,26 +61,26 @@
         let withdrawal = 0;
         let withdrawalfinal = 0;
         let due = initial;
+        let input;
         
         do {
-            // alert("- BANK MENU - \n 1. To enter the cash deposit \n 2. To enter the cash withdrawal \n To exit type 'exit'");
             input = prompt("- BANK MENU - \n 1. To enter the cash deposit \n 2. To enter the cash withdrawal \n To exit type 'exit'");
             switch (input) {
-                // Cash deposit
                 case "1":
                     deposit = prompt("Enter the deposit: ","0");
                     deposit = parseInt(deposit);
-                    depositfinal += deposit;
-                    // depositfinal = parseInt(depositfinal);
-                    due = due + deposit;
+                    if(!isNaN(deposit) && deposit > 0) {
+                        depositfinal += deposit;
+                        due = due + deposit;
+                    }
                     break;
-                // Cash withdrawal
                 case "2":
                     withdrawal = prompt("Enter the withdrawal: ","0");
                     withdrawal = parseInt(withdrawal);
-                    withdrawalfinal += withdrawal;
-                    // withdrawalfinal = parseInt(withdrawalfinal);
-                    due = due - withdrawal;
+                    if(!isNaN(withdrawal) && withdrawal > 0) {
+                        withdrawalfinal += withdrawal;
+                        due = due - withdrawal;
+                    }
                     break;
                 case "exit":
                     break;
@@ -60,7 +91,12 @@
         } while (input !== "exit");
 
         const outputDiv = document.getElementById("results");
-        outputDiv.innerHTML = "<i>Initial balance: </i>" + initial + "<br><i>Cash deposit: </i>" + depositfinal + "<br><i>Cash withdrawal: </i> -" + withdrawalfinal + "<br><i>Balance due: </i>" +due;
+        outputDiv.innerHTML = 
+            `<i>Initial balance:</i> <b>€${initial}</b><br>
+            <i>Cash deposit:</i> <span style="color:#169846;font-weight:bold;">+€${depositfinal}</span><br>
+            <i>Cash withdrawal:</i> <span style="color:#d42d2d;font-weight:bold;">-€${withdrawalfinal}</span><br>
+            <hr style="margin:18px 0;border:0;border-top:1.5px solid #d3ca89;">
+            <i>Balance due:</i> <b style="color:#266653;font-size:1.07em;">€${due}</b>`;
     </script>
 </body>
 </html>
