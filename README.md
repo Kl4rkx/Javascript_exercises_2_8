@@ -248,13 +248,3 @@ This project is open source and available under the MIT License.
 
 - **Repository**: [Kl4rkx/Javascript_exercises_2_8](https://github.com/Kl4rkx/Javascript_exercises_2_8)
 - **Live Demo**: Open `index.html` in your browser
-
-## 📧 Contact
-
-For questions or feedback, please open an issue in the repository.
-
----
-
-**Made with ❤️ for JavaScript learners**
-
----
