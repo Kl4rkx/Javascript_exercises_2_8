@@ -1,88 +1,337 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Ejercicios UD_2_8_EN</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      color: #3c3c3c;
-    }
-    .folder {
-      margin-bottom: 1.5em;
-      background: #fff;
-      padding: 1em;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .folder h2 {
-      color: #375eab;
-      margin-bottom: 0.5em;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 0.5em;
-    }
-    a {
-      color: #2557a7;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <h1>Ejercicios UD_2_8_EN</h1>
-  <p>Listado de los ejercicios contenidos en las carpetas:</p>
-
-  <div class="folder">
-    <h2>Ejercicio 1</h2>
-    <ul>
-      <li><a href="Ejercicio1/README.md" target="_blank">README</a></li>
-      <li><a href="Ejercicio1/ejercicio1.html" target="_blank">ejercicio1.html</a></li>
-      <li><a href="Ejercicio1/ejercicio1.js" target="_blank">ejercicio1.js</a></li>
-      <!-- Añade aquí más archivos si hay -->
-    </ul>
-  </div>
-
-  <div class="folder">
-    <h2>Ejercicio 2</h2>
-    <ul>
-      <li><a href="Ejercicio2/README.md" target="_blank">README</a></li>
-      <li><a href="Ejercicio2/ejercicio2.html" target="_blank">ejercicio2.html</a></li>
-      <li><a href="Ejercicio2/ejercicio2.js" target="_blank">ejercicio2.js</a></li>
-      <!-- Añade aquí más archivos si hay -->
-    </ul>
-  </div>
-
-  <div class="folder">
-    <h2>Ejercicio 3</h2>
-    <ul>
-      <li><a href="Ejercicio3/README.md" target="_blank">README</a></li>
-      <li><a href="Ejercicio3/ejercicio3.html" target="_blank">ejercicio3.html</a></li>
-      <li><a href="Ejercicio3/ejercicio3.js" target="_blank">ejercicio3.js</a></li>
-      <!-- Añade aquí más archivos si hay -->
-    </ul>
-  </div>
-
-  <!-- Añade más bloques <div class="folder"> ... </div> para cada ejercicio/carpeta -->
-
-  <div class="footer">
-    <p>Repositorio: <a href="https://github.com/Kl4rkx/UD_2_8_EN" target="_blank">Kl4rkx/UD_2_8_EN</a></p>
-    <p>Actualiza este archivo cuando añadas nuevos ejercicios.</p>
-  </div>
-</body>
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>JavaScript Exercises - Learning Hub</title>  
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+    }  
+  
+    body {  
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;  
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  
+      min-height: 100vh;  
+      padding: 2rem;  
+    }  
+  
+    .container {  
+      max-width: 1200px;  
+      margin: 0 auto;  
+    }  
+  
+    header {  
+      text-align: center;  
+      color: white;  
+      margin-bottom: 3rem;  
+    }  
+  
+    h1 {  
+      font-size: 2.5rem;  
+      margin-bottom: 0.5rem;  
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);  
+    }  
+  
+    .subtitle {  
+      font-size: 1.1rem;  
+      opacity: 0.9;  
+    }  
+  
+    .units-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
+      gap: 2rem;  
+      margin-bottom: 2rem;  
+    }  
+  
+    .unit-card {  
+      background: white;  
+      border-radius: 16px;  
+      padding: 2rem;  
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);  
+      transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    }  
+  
+    .unit-card:hover {  
+      transform: translateY(-5px);  
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);  
+    }  
+  
+    .unit-header {  
+      display: flex;  
+      align-items: center;  
+      margin-bottom: 1.5rem;  
+      padding-bottom: 1rem;  
+      border-bottom: 3px solid #f0f0f0;  
+    }  
+  
+    .unit-number {  
+      width: 50px;  
+      height: 50px;  
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  
+      color: white;  
+      border-radius: 12px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-size: 1.5rem;  
+      font-weight: bold;  
+      margin-right: 1rem;  
+    }  
+  
+    .unit-title {  
+      flex: 1;  
+    }  
+  
+    .unit-title h2 {  
+      color: #2d3748;  
+      font-size: 1.5rem;  
+      margin-bottom: 0.25rem;  
+    }  
+  
+    .unit-title p {  
+      color: #718096;  
+      font-size: 0.9rem;  
+    }  
+  
+    .exercises-list {  
+      list-style: none;  
+    }  
+  
+    .exercise-item {  
+      margin-bottom: 0.75rem;  
+    }  
+  
+    .exercise-link {  
+      display: flex;  
+      align-items: center;  
+      padding: 1rem;  
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);  
+      border-radius: 10px;  
+      text-decoration: none;  
+      color: #2d3748;  
+      transition: all 0.2s ease;  
+      border: 2px solid transparent;  
+    }  
+  
+    .exercise-link:hover {  
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  
+      color: white;  
+      border-color: #5a67d8;  
+      transform: translateX(5px);  
+    }  
+  
+    .exercise-icon {  
+      width: 35px;  
+      height: 35px;  
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  
+      color: white;  
+      border-radius: 8px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      margin-right: 1rem;  
+      font-weight: bold;  
+      font-size: 0.9rem;  
+    }  
+  
+    .exercise-link:hover .exercise-icon {  
+      background: white;  
+      color: #667eea;  
+    }  
+  
+    .exercise-info {  
+      flex: 1;  
+    }  
+  
+    .exercise-name {  
+      font-weight: 600;  
+      margin-bottom: 0.25rem;  
+    }  
+  
+    .exercise-desc {  
+      font-size: 0.85rem;  
+      opacity: 0.8;  
+    }  
+  
+    footer {  
+      text-align: center;  
+      color: white;  
+      margin-top: 3rem;  
+      padding-top: 2rem;  
+      border-top: 1px solid rgba(255,255,255,0.2);  
+    }  
+  
+    footer a {  
+      color: white;  
+      text-decoration: underline;  
+    }  
+  
+    @media (max-width: 768px) {  
+      .units-grid {  
+        grid-template-columns: 1fr;  
+      }  
+        
+      h1 {  
+        font-size: 2rem;  
+      }  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="container">  
+    <header>  
+      <h1>🚀 JavaScript Exercises</h1>  
+      <p class="subtitle">Progressive Learning Path - From Fundamentals to DOM Manipulation</p>  
+    </header>  
+  
+    <div class="units-grid">  
+      <!-- Unit 1: Fundamentals -->  
+      <div class="unit-card">  
+        <div class="unit-header">  
+          <div class="unit-number">1</div>  
+          <div class="unit-title">  
+            <h2>Fundamentals</h2>  
+            <p>Variables, Arithmetic & Basic I/O</p>  
+          </div>  
+        </div>  
+        <ul class="exercises-list">  
+          <li class="exercise-item">  
+            <a href="js_exercises_1/1/index.html" class="exercise-link">  
+              <div class="exercise-icon">1.1</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Calculator</div>  
+                <div class="exercise-desc">Basic arithmetic operations</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_1/2/index.html" class="exercise-link">  
+              <div class="exercise-icon">1.2</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Number Comparison</div>  
+                <div class="exercise-desc">Compare two numbers</div>  
+              </div>  
+            </a>  
+          </li>  
+        </ul>  
+      </div>  
+  
+      <!-- Unit 2: Control Flow -->  
+      <div class="unit-card">  
+        <div class="unit-header">  
+          <div class="unit-number">2</div>  
+          <div class="unit-title">  
+            <h2>Control Flow</h2>  
+            <p>Conditionals, Switch & Loops</p>  
+          </div>  
+        </div>  
+        <ul class="exercises-list">  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/1/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.1</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Positive/Negative Check</div>  
+                <div class="exercise-desc">Conditional statements</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/2/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.2</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Color Translation (Switch)</div>  
+                <div class="exercise-desc">Switch statement practice</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/3/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.3</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Color Translation (While)</div>  
+                <div class="exercise-desc">While loop iteration</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/4/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.4</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Cat/Dog Counter</div>  
+                <div class="exercise-desc">Do-while loop practice</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/5/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.5</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Multiplication Table</div>  
+                <div class="exercise-desc">For loop implementation</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_2/6/index.html" class="exercise-link">  
+              <div class="exercise-icon">2.6</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Banking Simulation</div>  
+                <div class="exercise-desc">State management & menus</div>  
+              </div>  
+            </a>  
+          </li>  
+        </ul>  
+      </div>  
+  
+      <!-- Unit 3: DOM & Forms -->  
+      <div class="unit-card">  
+        <div class="unit-header">  
+          <div class="unit-number">3</div>  
+          <div class="unit-title">  
+            <h2>DOM & Forms</h2>  
+            <p>Event-Driven Programming</p>  
+          </div>  
+        </div>  
+        <ul class="exercises-list">  
+          <li class="exercise-item">  
+            <a href="js_exercises_3/exercise1/index.html" class="exercise-link">  
+              <div class="exercise-icon">3.1</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Prize Selector</div>  
+                <div class="exercise-desc">Image & style manipulation</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_3/exercise2/index.html" class="exercise-link">  
+              <div class="exercise-icon">3.2</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Math Operations Form</div>  
+                <div class="exercise-desc">Form input & calculations</div>  
+              </div>  
+            </a>  
+          </li>  
+          <li class="exercise-item">  
+            <a href="js_exercises_3/exercise3/index.html" class="exercise-link">  
+              <div class="exercise-icon">3.3</div>  
+              <div class="exercise-info">  
+                <div class="exercise-name">Password Validator</div>  
+                <div class="exercise-desc">Form validation logic</div>  
+              </div>  
+            </a>  
+          </li>  
+        </ul>  
+      </div>  
+    </div>  
+  
+    <footer>  
+      <p>Repository: <a href="https://github.com/Kl4rkx/Javascript_exercises_2_8" target="_blank">Kl4rkx/Javascript_exercises_2_8</a></p>  
+      <p>11 Progressive JavaScript Exercises</p>  
+    </footer>  
+  </div>  
+</body>  
 </html>
