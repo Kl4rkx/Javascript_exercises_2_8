@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David JS Exercise 2-6 or exam type exercise</title>
+</head>
+<body>
+    <!-- EXAM TYPE EXERCISE: Create a program which recreates a
+    bank: meanwhile positive (cash deposit, money is introduced to the
+    bank account) and negative (cash withdrawal, money is obtained
+    from the bank account ) money amounts (numbers) are introduced
+    by the user the bank needs to update the bank account balance (its
+    initial value will need to be introduced by the user in the beginning).
+    The user will need to indicate that no longer money amounts are
+    going to be typed in order to see the final balance.
+    Information to be shown in the screen:
+    Initial balance: 100 euro
+    Cash deposit: 20 euro
+    Cash withdrawal: - 10 euro
+    Balance due: 110 euro -->
+    <h2>BANK</h2>
+    <div id="results"></div>
+    <script>
+        let initial = 0;
+        initial = prompt("Enter the initial balance: ");
+        initial = parseInt(initial);
+        let deposit = 0;
+        let depositfinal = 0;
+        let withdrawal = 0;
+        let withdrawalfinal = 0;
+        let due = initial;
+        
+        do {
+            // alert("- BANK MENU - \n 1. To enter the cash deposit \n 2. To enter the cash withdrawal \n To exit type 'exit'");
+            input = prompt("- BANK MENU - \n 1. To enter the cash deposit \n 2. To enter the cash withdrawal \n To exit type 'exit'");
+            switch (input) {
+                // Cash deposit
+                case "1":
+                    deposit = prompt("Enter the deposit: ","0");
+                    deposit = parseInt(deposit);
+                    depositfinal += deposit;
+                    // depositfinal = parseInt(depositfinal);
+                    due = due + deposit;
+                    break;
+                // Cash withdrawal
+                case "2":
+                    withdrawal = prompt("Enter the withdrawal: ","0");
+                    withdrawal = parseInt(withdrawal);
+                    withdrawalfinal += withdrawal;
+                    // withdrawalfinal = parseInt(withdrawalfinal);
+                    due = due - withdrawal;
+                    break;
+                case "exit":
+                    break;
+                default:
+                    alert("Please enter numbers '1', '2', or 'exit'.");
+                    break;
+            }
+        } while (input !== "exit");
+
+        const outputDiv = document.getElementById("results");
+        outputDiv.innerHTML = "<i>Initial balance: </i>" + initial + "<br><i>Cash deposit: </i>" + depositfinal + "<br><i>Cash withdrawal: </i> -" + withdrawalfinal + "<br><i>Balance due: </i>" +due;
+    </script>
+</body>
+</html>

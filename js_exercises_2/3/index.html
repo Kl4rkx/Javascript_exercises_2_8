@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David JS Exercise 2-3</title>
+</head>
+
+<body>
+    <h2>Color Translator</h2>
+    <div id="results"></div>
+    <!-- Exercise 3: WHILE. Enhance the previous exercise and the program
+    will keep asking for colours to translate until you indicate that no
+    more colours are going to be introduced. -->
+    <script>
+        let colour;
+        // Se selecciona el div donde se van a poner los resultados
+        const outputDiv = document.getElementById("results");
+
+        colour = prompt('Type a colour to be translated, to exit type: exit ', 'white');
+
+        if (colour === "exit") {
+            outputDiv.innerHTML += '<i>Bye!</i><br>';
+        } else {
+            // Entra al bucle mientras no sea exit
+            while (colour !== "exit") {
+                switch (colour) {
+                    case "white":
+                        outputDiv.innerHTML += 'Your translated colour is: <b>Zuria</b><br>';
+                        break;
+                    case "red":
+                        outputDiv.innerHTML += 'Your translated colour is: <b>Gorria</b><br>';
+                        break;
+                    case "blue":
+                        outputDiv.innerHTML += 'Your translated colour is: <b>Urdina</b><br>';
+                        break;
+                    case "green":
+                        outputDiv.innerHTML += 'Your translated colour is: <b>Berdea</b><br>';
+                        break;
+                    default:
+                        alert("Valid colors are: white, red, blue and green.");
+                        break;
+                }
+                colour = prompt('Type a colour to be translated, to exit type: exit ', 'white');
+            }
+            outputDiv.innerHTML += '<i>Bye!</i><br>';
+        }
+    </script>
+</body>
+
+</html>

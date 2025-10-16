@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title> JavaScript 2nd exercise </title>
+    <script>
+
+        // Solicitar los números y convertirlos a Number
+        let number1 = parseFloat(prompt('Which is the 1st number?', '0'));
+        document.write('1st number is: ', number1, '<br>');
+        let number2 = parseFloat(prompt('Which is the 2nd number?', '0'));
+        document.write('2nd number is: ', number2, '<br>');
+        let number3 = parseFloat(prompt('Which is the 3rd number?', '0'));
+        document.write('3rd number is: ', number3, '<br>');
+
+        // Verifica si todos los números son iguales
+        if (number1 === number2 && number2 === number3) {
+            document.write('All numbers are equal: ' + number1 + '<br>');
+        } else {
+            // Encuentra el máximo
+            let max = number1;
+            if (number2 > max) max = number2;
+            if (number3 > max) max = number3;
+            document.write('Biggest number is: ' + max + '<br>');
+
+        // // a= parseFloat (a); converts the string into number
+        // // && and
+        
+        }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
+<!-- WHAT TO DO: Enhance functionality:
+● Checking first if the numbers are equal or not.
+● Make the comparison with three numbers. -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David JS Exercise 2-4</title>
+</head>
+<body>
+    <h2>Count of cats and dogs</h2>
+    <div id="results"></div>
+    <script>
+        let cat = 0;
+        let dog = 0;
+        let input;
+        const outputDiv = document.getElementById("results");
+        do {
+            input = prompt("Type cat or dog, when you finish type 'exit'", "cat");
+            switch (input) {
+                case "cat":
+                    cat++;
+                    break;
+                case "dog":
+                    dog++;
+                    break;
+                case "exit":
+                    break;
+                default:
+                    alert("Please type 'cat', 'dog', or 'exit'.");
+                    break;
+            }
+        } while (input !== "exit");
+        outputDiv.innerHTML = "<i>Dogs: </i>" + dog + "<br><i>Cats: </i>" + cat;
+    </script>
+</body>
+</html>

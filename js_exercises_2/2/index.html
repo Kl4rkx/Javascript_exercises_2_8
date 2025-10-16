@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David JS Exercise 2-2</title>
+</head>
+<body>
+    <!-- Exercise 2: SWITCH. Create a program which translates the introduced colours (white, red, blue and green) to basque. -->
+    <script>
+
+        let colour = prompt('Type a colour to be translated:  ','white');
+        switch (colour) {
+            case "white": {
+                colour = "Zuria";
+                document.writeln('Your translated colour is: ' + colour);
+                break;
+            }
+            case "red": {
+                colour = "Gorria";
+                document.writeln('Your translated colour is: ' + colour);
+                break;
+            }
+            case "blue": {
+                colour = "Urdina";
+                document.writeln('Your translated colour is: ' + colour);
+                break;
+            }
+            case "green": {
+                colour = "Berdea";
+                document.writeln('Your translated colour is: '+ colour);
+                break;
+            }
+            default: {
+                document.writeln('Valid colors are: white, red, blue and green');
+                break;
+            }
+            break;
+        }
+    </script>
+</body>
+</html>
